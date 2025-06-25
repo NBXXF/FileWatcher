@@ -24,8 +24,12 @@ extension FileWatcher {
          0,
          UInt32(kFSEventStreamCreateFlagUseCFTypes | kFSEventStreamCreateFlagFileEvents)
       )
+       guard let streamRef = streamRef else {
+           print("FSEventStreamCreate failed for paths: \(filePaths)")
+           return
+       }
       selectStreamScheduler()
-      FSEventStreamStart(streamRef!)
+      FSEventStreamStart(streamRef)
    }
    /**
     * Stop listening for FSEvents
