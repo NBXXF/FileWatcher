@@ -24,7 +24,7 @@ public class FileWatcherEvent {
  * The following code is to differentiate between the FSEvent flag types (aka file event types)
  * - Remark: Be aware that .DS_STORE changes frequently when other files change
  */
-extension FileWatcherEvent {
+public extension FileWatcherEvent {
     // General
     var fileChange: Bool { (flags & FSEventStreamEventFlags(kFSEventStreamEventFlagItemIsFile)) != 0 }
     var dirChange: Bool { (flags & FSEventStreamEventFlags(kFSEventStreamEventFlagItemIsDir)) != 0 }
@@ -37,25 +37,25 @@ extension FileWatcherEvent {
 /**
  * Convenince
  */
-extension FileWatcherEvent {
+public extension FileWatcherEvent {
     // File
-    public var fileCreated: Bool { fileChange && created }
-    public var fileRemoved: Bool { fileChange && removed }
-    public var fileRenamed: Bool { fileChange && renamed }
-    public var fileModified: Bool { fileChange && modified }
+     var fileCreated: Bool { fileChange && created }
+     var fileRemoved: Bool { fileChange && removed }
+     var fileRenamed: Bool { fileChange && renamed }
+     var fileModified: Bool { fileChange && modified }
     // Directory
-    public var dirCreated: Bool { dirChange && created }
-    public var dirRemoved: Bool { dirChange && removed }
-    public var dirRenamed: Bool { dirChange && renamed }
-    public var dirModified: Bool { dirChange && modified }
+     var dirCreated: Bool { dirChange && created }
+     var dirRemoved: Bool { dirChange && removed }
+     var dirRenamed: Bool { dirChange && renamed }
+     var dirModified: Bool { dirChange && modified }
 }
 /**
  * Simplifies debugging
  * ## Examples:
  * Swift.print(event.description) // Outputs: The file /Users/John/Desktop/test/text.txt was modified
  */
-extension FileWatcherEvent {
-    public var description: String {
+public extension FileWatcherEvent {
+     var description: String {
         var result = "The \(fileChange ? "file":"directory") \(self.path) was"
         if self.removed { result += " removed" }
         else if self.created { result += " created" }

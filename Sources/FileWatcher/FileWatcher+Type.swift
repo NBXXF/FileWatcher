@@ -2,6 +2,6 @@ import Cocoa
 /**
  * Callback signature
  */
-extension FileWatcher {
-   public typealias CallBack = (_ fileWatcherEvent: FileWatcherEvent) -> Void
+public extension FileWatcher {
+    typealias CallBack = (_ fileWatcherEvent: FileWatcherEvent) -> Void
 }
