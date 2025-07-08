@@ -174,3 +174,4 @@ playground.xcworkspace
 ### VisualStudioCode ###
 .vscode/
 # End of https://www.gitignore.io/api/swift,xcode,visualstudiocode,macos,carthage,cocoapods,objective-c
+/.idea/
