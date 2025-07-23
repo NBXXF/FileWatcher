@@ -1,5 +1,5 @@
-import XCTest
 @testable import FileWatcher
+import XCTest
 
 final class FileWatcherTests: XCTestCase {
     func testExample() {
@@ -8,7 +8,8 @@ final class FileWatcherTests: XCTestCase {
         // results.
         XCTAssertEqual("Hello, World!", "Hello, World!")
     }
+
     static var allTests = [
-        ("testExample", testExample)
+        ("testExample", testExample),
     ]
 }
