@@ -43,7 +43,7 @@ public extension FileWatcherEvent {
         (flags & FSEventStreamEventFlags(kFSEventStreamEventFlagItemRemoved)) != 0
     }
 
-    /// 是否是“重命名”事件（ItemRenamed 标志位）
+    /// 是否是“重命名”事件（ItemRenamed 标志位）,注意移动也是这个事件
     /// - Applicable to: 文件或目录
     /// - Example: 文件重命名、目录更名时为 true
     var renamed: Bool {
